@@ -29,7 +29,7 @@ class _HindiTranslationState extends State<HindiTranslation> {
             Container(
                 margin: const EdgeInsets.symmetric(horizontal: 20),
                 child: Center(
-                    child: Text(
+                    child: SelectableText(
                   widget.content,
                   style: const TextStyle(fontSize: 18, color: Colors.white),
                 ))),

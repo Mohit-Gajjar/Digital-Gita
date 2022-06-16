@@ -1,3 +1,4 @@
+import 'package:digitalgita/constants.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
@@ -162,6 +163,7 @@ class _ChaptersState extends State<Chapters> {
   String summaryHindi17 = " ";
   String summaryHindi18 = " ";
   String summaryHindi19 = " ";
+  // ignore: prefer_typing_uninitialized_variables
   var responseData;
   @override
   void initState() {
@@ -349,12 +351,13 @@ class _ChaptersState extends State<Chapters> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: backColor1,
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
         title: const Text(
           "Chapters",
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.transparent,
       ),
@@ -577,43 +580,73 @@ class Tile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text("Chapter: " + chapter),
-        const SizedBox(
-          height: 10,
+    return Card(
+      color: cardColor,
+      child: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Chapter: " + chapter,
+              style: const TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              "Verse Count: " + verseCount,
+              style: const TextStyle(color: Colors.white),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              "Name: " + name,
+              style: const TextStyle(color: Colors.white),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              "Translation: " + translation,
+              style: const TextStyle(color: Colors.white),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              "Meaning (English): " + meaningEnglish,
+              style: const TextStyle(color: Colors.white),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              "Meaning (Hindi): " + meaningHindi,
+              style: const TextStyle(color: Colors.white),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              "Summary (English): " + summaryEnglish,
+              style: const TextStyle(color: Colors.white),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              "Summary (Hindi): " + summaryHindi,
+              style: const TextStyle(color: Colors.white),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+          ],
         ),
-        Text("Verse Count: " + verseCount),
-        const SizedBox(
-          height: 10,
-        ),
-        Text("Name: " + name),
-        const SizedBox(
-          height: 10,
-        ),
-        Text("Translation: " + translation),
-        const SizedBox(
-          height: 10,
-        ),
-        Text("Meaning (English): " + meaningEnglish),
-        const SizedBox(
-          height: 10,
-        ),
-        Text("Meaning (Hindi): " + meaningHindi),
-        const SizedBox(
-          height: 10,
-        ),
-        Text("Summary (English): " + summaryEnglish),
-        const SizedBox(
-          height: 10,
-        ),
-        Text("Summary (Hindi): " + summaryHindi),
-        const SizedBox(
-          height: 10,
-        ),
-      ],
+      ),
     );
   }
 }
